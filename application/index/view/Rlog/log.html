@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录</title>
+    <link href="/static/admin/login/css/style.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+
+<h1>音悦台登录</h1>
+<div class="login-form">
+
+    <div class="avtar" >
+
+    </div>
+    <form action="/loglis" method="post">
+        <input type="text" class="text" name="username" value="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Username';}" >
+        <input type="password" name="password" value="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+        <input type="submit" value="Login" >
+    </form>
+
+
+</div>
+
+<div class="copy-rights">
+    <p> 音悦台  </p>
+</div>
+
+</body>
+</html>

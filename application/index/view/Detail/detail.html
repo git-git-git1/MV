@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>mv详情页</title>
+    {include file="public/head"}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css" />
+
+</head>
+
+<body>
+{include file="public/nav" /}
+
+<!-- 内容区 start -->
+<div class="content">
+    <div class="wrap" style="text-align: center">
+        <video src="{$url['url']}" autoplay="autoplay" controls >
+               <!--<?php if(isset($_COOKIE['name']) ){ ?>-->
+               <!--controls-->
+                <!--<?php }  ?>-->
+
+
+        </video>
+        <h3 class="pull-left">{$url['title']}</h3>
+        <h3 class="social-share pull-right" data-disabled="google,twitter,facebook"></h3>
+    </div>
+</div>
+<!-- 内容区 end -->
+
+<div class="container">
+    <div class="row">
+        <div class="h-15"></div>
+        <h4>热播推荐</h4>
+        <hr>
+        <div class="mv-list">
+            {volist name="v_sort" id="vo" offset="0" length="4"}
+            <a href="detail?music_id={$vo.id}">
+            <div class="col-md-2 item">
+                <img src="{$vo.image}" alt="" style="width: 180px">
+                <h5>《{$vo.title}》</h5>
+                <p>{$vo.singer}</p>
+            </div>
+            </a>
+            {/volist}
+
+            <div class="clearfix"></div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="h-15"></div>
+        <h4>歌手其他作品</h4>
+        <hr>
+        <div class="mv-list">
+           <?php for($i=rand(0,(count($singer)-4)),$j=0; $j<4; $j++,$i++){   ?>
+            <a href="detail?music_id={$singer[$i]['id']}">
+            <div class="col-md-2 item">
+                <img src="{$singer[$i]['image']}" alt="" style="width: 180px">
+                <h5>{$singer[$i]['title']}</h5>
+                <p>{$singer[$i]['singer']}</p>
+            </div>
+            </a>
+            <?php  } ?>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</div>
+
+<hr>
+{include file="public/foot" /}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+</body>
+
+</html>

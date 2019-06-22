@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>注册</title>
+    <link href="/static/admin/login/css/style.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+
+<h1>音悦台注册</h1>
+<div class="login-form">
+
+    <form action="/reglis" method="post" enctype="multipart/form-data">
+        <p style="color: #ffffff">账号设置</p>
+        <input type="text" class="text" name="username" value="" >
+        <p style="color: #ffffff">密码设置</p>
+        <input type="password" name="password" value="" >
+        <p style="color: #ffffff">确认密码</p>
+        <input type="password" name="repassword" value="" >
+        <p style="color: #ffffff">头像上传</p>
+        <input type="file" name="profile" >
+        <br/><br/>
+        <input type="submit" value="Register" >
+    </form>
+
+
+</div>
+
+<div class="copy-rights">
+    <p> 音悦台  </p>
+</div>
+
+</body>
+</html>
